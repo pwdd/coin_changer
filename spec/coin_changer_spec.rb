@@ -24,7 +24,13 @@ describe CoinChanger do
   it 'returns one nickel and one penny' do
     change = coin_changer.make_change(6)
 
-    expect(change). to eq([1, 5])
+    expect(change).to match_array([1, 5])
+  end
+
+  it 'returns a dime' do
+    change = coin_changer.make_change(10)
+
+    expect(change).to eq([10])
   end
 end
 
