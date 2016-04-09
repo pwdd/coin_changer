@@ -38,6 +38,12 @@ describe CoinChanger do
 
     expect(change).to match_array([10, 5, 1])
   end
+
+  it 'returns a quarter' do
+    change = coin_changer.make_change(25)
+
+    expect(change).to eq([25])
+  end
 end
 
 
