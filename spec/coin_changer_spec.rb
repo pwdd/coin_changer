@@ -32,6 +32,12 @@ describe CoinChanger do
 
     expect(change).to eq([10])
   end
+
+  it 'returns a combination of dimes, nickels and pennies' do
+    change = coin_changer.make_change(16)
+
+    expect(change).to match_array([10, 5, 1])
+  end
 end
 
 
