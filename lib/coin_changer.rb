@@ -1,12 +1,13 @@
 class CoinChanger
   COINS = [1, 5, 10, 25].sort.reverse
+  
   def make_change(amount)
-    COINS.inject([]) do |memo, coin|
+    COINS.inject([]) do |change, coin|
       while coin <= amount
-        memo << coin
+        change << coin
         amount -= coin
       end
-      memo
+      change
     end
   end
 end

@@ -3,6 +3,10 @@ require 'coin_changer'
 describe CoinChanger do
   let(:coin_changer) { CoinChanger.new }
 
+  it 'has a constant that holds all coins values' do
+    expect(CoinChanger::COINS).to match_array([1, 5, 10, 25])
+  end
+
   it 'returns 1 penny' do
     change = coin_changer.make_change(1)
 
